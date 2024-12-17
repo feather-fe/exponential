@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     ]
   };
-  return res.status(200).json({ message: raw });
+  return res.status(200).json(raw);
 
   const requestOptions = {
     method: "POST",
