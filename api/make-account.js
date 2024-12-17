@@ -6,6 +6,7 @@ export default async function handler(req, res) {
   const myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer patFPAzk3Ni4jtL7K.8bdcda86e17b32bd177f9ab25661e401e4454a8e4a2401a267c36b67e94ea933");
   myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Cookie", "brw=brwtcGK1QAbqebbws; AWSALBTG=G1c/AaFChM68qJ1miOJKA7fGRCNK2TxB1eb/N71cSJlKrRHpHs4skfSztHPIXhc9m32dXm3/SPz3hPcm/M4jvZY4GcPVqDbl5ExnNZCWI1uJ5knMLc8sqrgTgPoSU5fnJo7VLBJj+z4l9eU+SPgHYNs7U5mLI2VvapdPI0L8qBAkp7krtms=; AWSALBTGCORS=G1c/AaFChM68qJ1miOJKA7fGRCNK2TxB1eb/N71cSJlKrRHpHs4skfSztHPIXhc9m32dXm3/SPz3hPcm/M4jvZY4GcPVqDbl5ExnNZCWI1uJ5knMLc8sqrgTgPoSU5fnJo7VLBJj+z4l9eU+SPgHYNs7U5mLI2VvapdPI0L8qBAkp7krtms=");
 
   const raw = 
 
