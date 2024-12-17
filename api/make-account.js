@@ -10,12 +10,12 @@ export default async function handler(req, res) {
 
   const raw = 
 
-      {
+      ({
         "fields": {
           "username": username,
           "password": password
         }
-      };
+      });
   
 
   const requestOptions = {
