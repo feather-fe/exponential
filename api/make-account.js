@@ -17,6 +17,8 @@ export default async function handler(req, res) {
       }
     ]
   });
+  console.log(raw)
+  console.log(raw)
 
   const requestOptions = {
     method: "POST",
