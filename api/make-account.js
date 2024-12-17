@@ -14,7 +14,7 @@ export default async function handler(req, res) {
           "username": username,
           "password": password
         }
-      }
+      };
   
 
   const requestOptions = {
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     // Check if the response is successful (status code 200-299)
     if (!response.ok) {
       const errorData = await response.json();
-      return res.status(500).json({ message: "Airtable API Error", error: errorData });
+      return res.status(500).json({ message: "Airtable API Error", error: errorData, requestOptions, raw });
     }
 
     const result = await response.json();
