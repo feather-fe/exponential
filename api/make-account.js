@@ -18,7 +18,8 @@ export default async function handler(req, res) {
     ]
   });
   console.log(raw)
-  console.log(raw)
+  return res.status(200).json({ message: raw})
+  /*
 
   const requestOptions = {
     method: "POST",
@@ -42,4 +43,5 @@ export default async function handler(req, res) {
     console.error("Error:", error);
     return res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
+  */
 }
