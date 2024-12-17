@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   myHeaders.append("Authorization", "Bearer patFPAzk3Ni4jtL7K.8bdcda86e17b32bd177f9ab25661e401e4454a8e4a2401a267c36b67e94ea933");
   myHeaders.append("Content-Type", "application/json");
 
-  const raw = JSON.stringify({
+  const raw = {
     "records": [
       {
         "fields": {
@@ -15,12 +15,10 @@ export default async function handler(req, res) {
           "password": password
         }
       }
-      
+
     ]
-  });
-  console.log(raw)
-  return res.status(200).json({ message: raw})
-  /*
+  };
+  
 
   const requestOptions = {
     method: "POST",
@@ -44,5 +42,4 @@ export default async function handler(req, res) {
     console.error("Error:", error);
     return res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
-  */
 }
