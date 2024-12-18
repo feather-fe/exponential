@@ -8,11 +8,5 @@ var base = new Airtable({apiKey: 'Bearer patFPAzk3Ni4jtL7K.8bdcda86e17b32bd177f9
 base('logins').create({
   "username": username,
   "password": password
-}, function(err, record) {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(record.getId());
-});
+})
 }
