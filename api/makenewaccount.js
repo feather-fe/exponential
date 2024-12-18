@@ -20,6 +20,6 @@ const requestOptions = {
 };
 
 fetch("https://api.airtable.com/v0/appXXbVu5p4uSKViT/logins", requestOptions)
-  return new Response(`Hello from vergini-inia` + JSON.stringify(request));
+  return new Response(`Hello from vergini-inia` + JSON.stringify(request.body));
 }
 
