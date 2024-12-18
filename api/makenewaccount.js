@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     console.log('Received data:', { name, email });
 
     // Send a response back to the client
-    res.status(200).json({ success: true, message: 'Data received successfully' });
+    res.status(200).json({ success: true, message: 'Data received successfully', data : {name , email} });
   } else {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
