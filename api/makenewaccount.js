@@ -22,7 +22,4 @@ export default async function handler(req, res) {
   };
   
   fetch("https://api.airtable.com/v0/appXXbVu5p4uSKViT/logins", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
 }
