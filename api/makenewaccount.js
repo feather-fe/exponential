@@ -1,5 +1,5 @@
 import { json } from 'micro';
-export default async function handler(req, res) {
+export default async function handler(req) {
   const data = await json(req)
   const {username, password} = data
   const myHeaders = new Headers();
