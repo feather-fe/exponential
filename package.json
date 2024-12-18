@@ -4,7 +4,8 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "grist-api": "^0.1.7",
-    "micro": "^10.0.1"
+    "micro": "^10.0.1",
+    "vercel": "^39.2.2"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
