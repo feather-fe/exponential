@@ -11,7 +11,7 @@ export async function POST(request) {
     }
 
     const myHeaders = new Headers()
-    myHeaders.append("Authorization", `Bearer ${process.env.AIRTABLE_API_KEY}`)
+    myHeaders.append("Authorization", `Bearer ${process.env.API_KEY}`)
     myHeaders.append("Content-Type", "application/json")
 
     const raw = JSON.stringify({
