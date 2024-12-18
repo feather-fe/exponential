@@ -16,8 +16,8 @@ export async function POST(request) {
 
     const raw = JSON.stringify({
       fields: {
-        username: "username",
-        password: "password"
+        username: username,
+        password: password
       }
     })
 
