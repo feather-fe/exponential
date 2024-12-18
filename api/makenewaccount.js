@@ -44,7 +44,7 @@ export async function POST(request) {
     })
 
   } catch (error) {
-    console.error('Error uploading data:', error)
+    console.error('Error uploading data:', error, request.json())
     return new Response(JSON.stringify({ success: false, message: 'Error uploading data', error: error.message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
