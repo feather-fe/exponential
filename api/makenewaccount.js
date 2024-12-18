@@ -1,6 +1,4 @@
 // File: app/api/upload-login/route.js
-import { NextResponse } from 'next/server'
-
 export async function POST(request) {
   try {
     const { username, password } = await request.json()
