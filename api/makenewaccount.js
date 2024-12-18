@@ -6,12 +6,16 @@ export async function POST(request) {
     if (!username || !password) {
       return new Response(JSON.stringify({ success: false, message: 'Username and password are required' }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+        }
       })
     }
 
     const myHeaders = new Headers()
-    myHeaders.append("Authorization", `${process.env.API_KEY}`)
+    myHeaders.append("Authorization", `Bearer ${process.env.AIRTABLE_API_KEY}`)
     myHeaders.append("Content-Type", "application/json")
 
     const raw = JSON.stringify({
@@ -33,21 +37,33 @@ export async function POST(request) {
       const errorData = await response.json()
       return new Response(JSON.stringify({ success: false, message: errorData.message }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+        }
       })
     }
 
     const data = await response.json()
     return new Response(JSON.stringify({ success: true, message: 'Data uploaded successfully', data }), {
       status: 201,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST',
+      }
     })
 
   } catch (error) {
-    console.error('Error uploading data:', error, request.json())
-    return new Response(JSON.stringify({ success: false, message: 'Error uploading data', error: error.message, raw}), {
+    console.error('Error uploading data:', error)
+    return new Response(JSON.stringify({ success: false, message: 'Error uploading data', error: error.message }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    })
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST',
+      }
+      })
   }
 }
