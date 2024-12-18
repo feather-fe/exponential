@@ -13,7 +13,6 @@ export default async function handler() {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    body: raw,
     redirect: "follow"
   };
   
