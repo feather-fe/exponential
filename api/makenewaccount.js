@@ -11,4 +11,12 @@ export default async function handler() {
       "password": "thosewhoknow"
     }
   });
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("https://api.airtable.com/v0/appXXbVu5p4uSKViT/logins", requestOptions)
 }
