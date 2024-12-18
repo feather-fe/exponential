@@ -1,15 +1,17 @@
-// File: app/api/upload-login/route.js
 export async function POST(request) {
   try {
     const { username, password } = await request.json()
 
     // Validate input
     if (!username || !password) {
-      return NextResponse.json({ success: false, message: 'Username and password are required' }, { status: 400 })
+      return new Response(JSON.stringify({ success: false, message: 'Username and password are required' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      })
     }
 
     const myHeaders = new Headers()
-    myHeaders.append("Authorization", `Bearer ${process.env.API_KEY}`)
+    myHeaders.append("Authorization", `Bearer ${process.env.AIRTABLE_API_KEY}`)
     myHeaders.append("Content-Type", "application/json")
 
     const raw = JSON.stringify({
@@ -29,14 +31,23 @@ export async function POST(request) {
 
     if (!response.ok) {
       const errorData = await response.json()
-      return NextResponse.json({ success: false, message: errorData.message }, { status: 500 })
+      return new Response(JSON.stringify({ success: false, message: errorData.message }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      })
     }
 
     const data = await response.json()
-    return NextResponse.json({ success: true, message: 'Data uploaded successfully', data }, { status: 201 })
+    return new Response(JSON.stringify({ success: true, message: 'Data uploaded successfully', data }), {
+      status: 201,
+      headers: { 'Content-Type': 'application/json' }
+    })
 
   } catch (error) {
     console.error('Error uploading data:', error)
-    return NextResponse.json({ success: false, message: 'Error uploading data', error: error.message }, { status: 500 })
+    return new Response(JSON.stringify({ success: false, message: 'Error uploading data', error: error.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    })
   }
 }
