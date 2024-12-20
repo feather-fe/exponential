@@ -1,4 +1,7 @@
-export async function POST(request) {
+export async function POST(request, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "POST");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     const { username, password } = await request.json()
 
