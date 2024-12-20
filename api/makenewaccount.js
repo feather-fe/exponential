@@ -3,6 +3,7 @@ export async function POST(request, res) {
     const { username, password } = await request.json()
 
     // Validate input
+    
     if (!username || !password) {
       return new Response(JSON.stringify({ success: false, message: 'Username and password are required' }), {
         status: 400,
