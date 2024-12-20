@@ -4,6 +4,7 @@ export default (request, context) => {
     const url = new URL(request.url)
     const subject = url.searchParams.get('name') || 'World'
     const { username, password } = request.json()
+    
     return new Response({username, password})
   } catch (error) {
     return new Response(error.toString(), {
