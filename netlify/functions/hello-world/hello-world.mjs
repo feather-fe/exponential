@@ -9,7 +9,7 @@ export default async (request, context) => {
   try {
     const { username, password } = await request.json()
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer patFPAzk3Ni4jtL7K.8bdcda86e17b32bd177f9ab25661e401e4454a8e4a2401a267c36b67e94ea933");
+    myHeaders.append("Authorization", process.env.API_KEY);
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Cookie", "brw=brwXpq8TytmY2qtpw; brwConsent=opt-in; AWSALBTG=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=; AWSALBTGCORS=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=");
     
