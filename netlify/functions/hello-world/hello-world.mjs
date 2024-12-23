@@ -9,11 +9,15 @@ export default async (request, context) => {
   try {
     const { username, password } = await request.json()
     const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer patFPAzk3Ni4jtL7K.8bdcda86e17b32bd177f9ab25661e401e4454a8e4a2401a267c36b67e94ea933");
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Cookie", "brw=brwXpq8TytmY2qtpw; brwConsent=opt-in; AWSALBTG=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=; AWSALBTGCORS=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=");
     
     const raw = JSON.stringify({
-      "username": username,
-      "password": password
+      "fields": {
+        "username": username,
+        "password": password
+      }
     });
     
     const requestOptions = {
@@ -24,11 +28,11 @@ export default async (request, context) => {
     };
     
     try {
-      const response = await fetch("https://exponential-psi.vercel.app/api/makenewaccount", requestOptions);
+      const response = await fetch("https://api.airtable.com/v0/appXXbVu5p4uSKViT/logins", requestOptions);
       const result = await response.text();
       console.log(result)
     } catch (error) {
-      return new Response("Error: Account not created", error);
+      console.error(error);
     };
     return new Response(JSON.stringify({ username, password }), {
       headers: { 'Content-Type': 'application/json' },
