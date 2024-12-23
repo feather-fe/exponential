@@ -11,8 +11,7 @@ export default async (request, context) => {
     const myHeaders = new Headers();
     myHeaders.append("Authorization", process.env.API_KEY);
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "brw=brwXpq8TytmY2qtpw; brwConsent=opt-in; AWSALBTG=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=; AWSALBTGCORS=yCzNg3TcsBBHBnSgRzefBwl2+ihORh1tFrlqLVMz0VUIzmp8bWkE0wF78UkFK6BdpfPzSk4w04KqC5qeRcLli7jFovg8ZX3t2mmdAXQj4rIYJmcaQqhVEa6AIZ5dg3tqxFTEZ0JfUV3ygQYIwY8wSUWSaKjM98IAWgpmcdymdzFKF2eDPfI=");
-    
+
     const raw = JSON.stringify({
       "fields": {
         "username": username,
