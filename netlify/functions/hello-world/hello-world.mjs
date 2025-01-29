@@ -1,5 +1,5 @@
 // Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
-export default async (request, context) => {
+export default async (request) => {
   if (request.method !== 'POST') {
     return new Response('Method Not Allowed', {
       status: 405,
